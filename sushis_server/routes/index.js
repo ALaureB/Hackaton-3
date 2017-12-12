@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.all('*', function (req, res, next) {
+router.post('*', function (req, res, next) {
   console.log(req.body);
   switch (req.body.result.action) {
     case 'age':
@@ -20,7 +20,7 @@ router.all('*', function (req, res, next) {
       // Sur le site de sushi shop -> cheerio -> récupérer le prix 
       console.log(req.body.result.parameters.product);
       res.json({
-        speech: `${$geo-city-fr} quel bel âge !`,
+        speech: `${$geo-city-fr} quelle belle ville !`,
         source: 'webhook'
       });
       break;
