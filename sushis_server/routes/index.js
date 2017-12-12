@@ -12,7 +12,7 @@ router.all('*', function (req, res, next) {
   switch (req.body.result.action) {
     case 'age':
       res.json({
-        speech: `${$number} ans, quel bel âge ! `,
+        speech: `${$number} ans, quel bel âge !`,
         source: 'webhook'
       });
       break;
@@ -20,7 +20,7 @@ router.all('*', function (req, res, next) {
       // Sur le site de sushi shop -> cheerio -> récupérer le prix 
       console.log(req.body.result.parameters.product);
       res.json({
-        speech: '$geo-city-fr quel bel âge !',
+        speech: `${$geo-city-fr} quel bel âge !`,
         source: 'webhook'
       });
       break;
