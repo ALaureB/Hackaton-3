@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('*', function (req, res, next) {
+router.all('*', function (req, res, next) {
   console.log(req.body);
   switch (req.body.result.action) {
     case 'age':
