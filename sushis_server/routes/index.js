@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/l', function(req, res, next) {
+  res.render('index', {
+	title: 'Sushis project'
+  });
+});
+
 router.all('*', function (req, res, next) {
   console.log(req.body);
   switch (req.body.result.action) {
