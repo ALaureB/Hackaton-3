@@ -24,14 +24,6 @@ router.all('*', function (req, res, next) {
         source: 'webhook'
       });
       break;
-    case 'prenom':
-      // Sur le site de sushi shop -> cheerio -> récupérer le prix 
-      console.log(req.body.result.parameters.product);
-      res.json({
-        speech: `${$given-name} quel joli prénom`,
-        source: 'webhook'
-      });
-      break;
 
     default:
       res.json({
