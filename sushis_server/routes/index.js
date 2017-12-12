@@ -9,7 +9,7 @@ router.get('/l', function(req, res, next) {
 
 router.all('*', function (req, res, next) {
   console.log(req.body);
-  switch (req.body.result.action) {
+  switch (req.body.result) {
     case 'age':
       res.json({
         speech: 'Le plus proche est à .... ',
@@ -27,7 +27,7 @@ router.all('*', function (req, res, next) {
 
     default:
       res.json({
-        speech: 'Je n\'ai pas compris',
+        speech: 'No comprendo',
         source: 'webhook'
       });
   }
