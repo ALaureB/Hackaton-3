@@ -12,7 +12,7 @@ router.all('*', function (req, res, next) {
   switch (req.body.result.action) {
     case 'age':
       res.json({
-        speech: '$number ans, quel bel âge ! ',
+        speech: `${$number} ans, quel bel âge ! `,
         source: 'webhook'
       });
       break;
