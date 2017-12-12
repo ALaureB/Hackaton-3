@@ -27,7 +27,7 @@ router.all('*', function (req, res, next) {
 
     default:
       res.json({
-        speech: 'Mwa pas konpran',
+        speech: 'Je ne comprends pas.',
         source: 'webhook'
       });
   }
