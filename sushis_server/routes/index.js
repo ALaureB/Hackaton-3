@@ -17,29 +17,29 @@ router.all('*', function (req, res, next) {
     var cities = JSON.parse(data).filter(el => { return el.id_store == '79'; });
     console.log(cities);
   })
-    switch (req.body.result.action) {
-      case 'bonjour':
-        res.json({
-          speech: `Bonjour cher utilisateur ! Comment t'appelles-tu?`,
-          source: 'webhook'
-        });
-        break;
+  switch (req.body.result.action) {
+    case 'bonjour':
+      res.json({
+        speech: `Bonjour cher utilisateur ! Comment t'appelles-tu?`,
+        source: 'webhook'
+      });
+      break;
 
-      case 'prenom':
-        res.json({
-          speech: `${req.body.result.parameters.any}, comment puis-je t'aider ?`,
-          source: 'webhook'
-        });
-        break;
+    case 'prenom':
+      res.json({
+        speech: `${req.body.result.parameters.prenom}, comment puis-je t'aider ?`,
+        source: 'webhook'
+      });
+      break;
 
 
 
-      default:
-        res.json({
-          speech: 'Je ne comprends pas, peux-tu reformuler ta demande ?',
-          source: 'webhook'
-        });
-    }
-  });
+    default:
+      res.json({
+        speech: 'Je ne comprends pas, peux-tu reformuler ta demande ?',
+        source: 'webhook'
+      });
+  }
+});
 
-  module.exports = router;
+module.exports = router;
